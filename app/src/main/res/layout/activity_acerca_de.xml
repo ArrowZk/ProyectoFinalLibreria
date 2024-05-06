@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pastel_blue"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".AcercaDeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textSize="20dp"
+        android:gravity="fill_horizontal"
+        android:justificationMode="inter_word"
+        android:background="@drawable/rounded_background"
+        android:backgroundTint="@color/pastel_pink"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Aplicacion hecha para examen segundo parcial de la materia de DISEÑO PARA MOVILES, El objetivo principal del desarrollo de esta aplicación es crear una plataforma intuitiva y atractiva para que los usuarios exploren y descubran una amplia variedad de libros."/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:layout_marginTop="30dp"
+        android:text="Hecho por:"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:text="Roberto de Jesus Macias Tovar"/>
+</LinearLayout>
