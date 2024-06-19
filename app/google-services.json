@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "729073091490",
+    "project_id": "libreriaapp-433ed",
+    "storage_bucket": "libreriaapp-433ed.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729073091490:android:993885258c3f8e0d93e8fb",
+        "android_client_info": {
+          "package_name": "com.example.libreriap2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsVgliGig7SG3WVW23WVAsUMScPOTobtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
