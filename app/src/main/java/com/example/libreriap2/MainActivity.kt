@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.GestureDetector
 import android.view.MotionEvent
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -13,13 +14,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.libreriap2.adapter.BookAdapter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
-
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,6 +69,11 @@ class MainActivity : AppCompatActivity() {
         // Configurar el click del elemento del menú
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.nav_add -> {
+                    // Abrir la Activity para Agregar libros
+                    startActivity(Intent(this, AddBookActivity::class.java))
+                    true
+                }
                 R.id.nav_about -> {
                     // Abrir la Activity AcercaDeActivity
                     startActivity(Intent(this, AcercaDeActivity::class.java))
@@ -73,6 +82,24 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        // Initialize Firebase Database
+        database = FirebaseDatabase.getInstance().reference.child("books")
     }
 
+    // Funciones para alta, baja y cambios
+    private fun addBook(book: Book) {
+        val bookId = database.push().key
+        if (bookId != null) {
+            database.child(bookId).setValue(book)
+        }
+    }
+
+    private fun updateBook(bookId: String, book: Book) {
+        database.child(bookId).setValue(book)
+    }
+
+    private fun deleteBook(bookId: String) {
+        database.child(bookId).removeValue()
+    }
 }

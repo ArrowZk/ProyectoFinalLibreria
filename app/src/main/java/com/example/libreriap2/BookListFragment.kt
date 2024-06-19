@@ -1,13 +1,17 @@
 package com.example.libreriap2
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.libreriap2.adapter.BookAdapter
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,6 +30,7 @@ class BookListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var bookAdapter: BookAdapter
+    private val books = mutableListOf<Book>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,13 +51,36 @@ class BookListFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        // Set up RecyclerView adapter
-        bookAdapter = BookAdapter(BookProvider.getSampleBooks())
+        // Initialize Adapter
+        bookAdapter = BookAdapter(books)
         recyclerView.adapter = bookAdapter
+
+        // Load data from Firebase
+        loadBooksFromFirebase()
 
         return view
     }
 
+    private fun loadBooksFromFirebase() {
+        val database = FirebaseDatabase.getInstance().reference.child("books")
+
+        database.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                books.clear()
+                for (data in snapshot.children) {
+                    val book = data.getValue(Book::class.java)
+                    if (book != null) {
+                        books.add(book)
+                    }
+                }
+                bookAdapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                // Handle error
+            }
+        })
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

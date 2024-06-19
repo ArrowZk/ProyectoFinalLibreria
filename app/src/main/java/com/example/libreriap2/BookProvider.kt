@@ -3,7 +3,7 @@ package com.example.libreriap2
 object BookProvider {
     private val books: Map<Int, Book> = mapOf(
             1 to Book(
-                1,
+                "1",
                 "El Principito",
                 "Antoine de Saint-Exupéry",
                 "https://upload.wikimedia.org/wikipedia/commons/1/1c/El_principito.jpg",
@@ -16,8 +16,8 @@ object BookProvider {
                 6,
                 85.00
             ),
-            2 to Book(
-                2,
+            /*2 to Book(
+                "2",
                 "1984",
                 "George Orwell",
                 "https://imagessl4.casadellibro.com/a/l/s5/44/9788499890944.webp",
@@ -31,7 +31,7 @@ object BookProvider {
                 120.00
             ),
             3 to Book(
-                3,
+                "3",
                 "Cien años de soledad",
                 "Gabriel García Márquez",
                 "https://m.media-amazon.com/images/I/91TvVQS7loL._AC_UF1000,1000_QL80_.jpg",
@@ -45,7 +45,7 @@ object BookProvider {
                 150.00
             ),
             4 to Book(
-                4,
+                "4",
                 "El Gran Gatsby",
                 "F. Scott Fitzgerald",
                 "https://www.elsotano.com/imagenes_grandes/9788418/978841839518.JPG",
@@ -59,7 +59,7 @@ object BookProvider {
                 95.00
             ),
             5 to Book(
-                5,
+                "5",
                 "Matar a un ruiseñor",
                 "Harper Lee",
                 "https://m.media-amazon.com/images/I/81+j6JIEweL._AC_UF1000,1000_QL80_.jpg",
@@ -73,7 +73,7 @@ object BookProvider {
                 110.00
             ),
             6 to Book(
-                6,
+                "6",
                 "Orgullo y prejuicio",
                 "Jane Austen",
                 "https://www.planetadelibros.com.mx/usuaris/libros/fotos/383/m_libros/portada_orgullo-y-prejuicio_jane-austen_202308011307.jpg",
@@ -87,7 +87,7 @@ object BookProvider {
                 80.00
             ),
             7 to Book(
-                7,
+                "7",
                 "La sombra del viento",
                 "Carlos Ruiz Zafón",
                 "https://m.media-amazon.com/images/I/919J8I9S6QL._AC_UF1000,1000_QL80_.jpg",
@@ -101,7 +101,7 @@ object BookProvider {
                 150.00
             ),
             8 to Book(
-                8,
+                "8",
                 "Don Quijote de la Mancha",
                 "Miguel de Cervantes",
                 "https://m.media-amazon.com/images/I/71kdJikvR4L._AC_UF1000,1000_QL80_.jpg",
@@ -115,7 +115,7 @@ object BookProvider {
                 200.00
             ),
             9 to Book(
-                9,
+                "9",
                 "Rayuela",
                 "Julio Cortázar",
                 "https://upload.wikimedia.org/wikipedia/commons/c/ca/Rayuela_JC.png",
@@ -129,7 +129,7 @@ object BookProvider {
                 170.00
             ),
             10 to Book(
-                10,
+                "10",
                 "La casa de los espíritus",
                 "Isabel Allende",
                 "https://m.media-amazon.com/images/I/914oLv5QzaL._AC_UF1000,1000_QL80_.jpg",
@@ -143,7 +143,7 @@ object BookProvider {
                 140.00
             ),
             11 to Book(
-                11,
+                "11",
                 "Los renglones torcidos de Dios",
                 "Torcuato Luca de Tena",
                 "https://m.media-amazon.com/images/I/71o+3AdQCsL._AC_UF1000,1000_QL80_.jpg",
@@ -157,7 +157,7 @@ object BookProvider {
                 120.00
             ),
             12 to Book(
-                12,
+                "12",
                 "La ciudad y los perros",
                 "Mario Vargas Llosa",
                 "https://m.media-amazon.com/images/I/71EyHH99GfL._AC_UF1000,1000_QL80_.jpg",
@@ -171,7 +171,7 @@ object BookProvider {
                 110.00
             ),
             13 to Book(
-                13,
+                "13",
                 "La Regenta",
                 "Leopoldo Alas Clarín",
                 "https://m.media-amazon.com/images/I/61LFMR6xGsL._AC_UF894,1000_QL80_.jpg",
@@ -185,7 +185,7 @@ object BookProvider {
                 130.00
             ),
             14 to Book(
-                14,
+                "14",
                 "La Sombra",
                 "John Katzenbach",
                 "https://m.media-amazon.com/images/I/914lkuwDnCL._AC_UF894,1000_QL80_.jpg",
@@ -199,7 +199,7 @@ object BookProvider {
                 140.00
             ),
             15 to Book(
-                15,
+                "15",
                 "La Catedral del Mar",
                 "Ildefonso Falcones",
                 "https://m.media-amazon.com/images/I/912JG9bB8XL._AC_UF1000,1000_QL80_DpWeblab_.jpg",
@@ -213,7 +213,7 @@ object BookProvider {
                 160.00
             ),
             16 to Book(
-                16,
+                "16",
                 "El Perfume: Historia de un asesino",
                 "Patrick Süskind",
                 "https://m.media-amazon.com/images/I/91LSFx5oCbL._AC_UF894,1000_QL80_.jpg",
@@ -227,7 +227,7 @@ object BookProvider {
                 130.00
             ),
             17 to Book(
-                17,
+                "17",
                 "El paciente",
                 "Juan Gómez-Jurado",
                 "https://m.media-amazon.com/images/I/71MHX8cMHnL._AC_UF1000,1000_QL80_.jpg",
@@ -241,7 +241,7 @@ object BookProvider {
                 140.00
             ),
             18 to Book(
-                18,
+                "18",
                 "La verdad sobre el caso Harry Quebert",
                 "Joël Dicker",
                 "https://www.elsotano.com/imagenes_grandes/9786071/978607112646.JPG",
@@ -255,7 +255,7 @@ object BookProvider {
                 150.00
             ),
             19 to Book(
-                19,
+                "19",
                 "El fin del mundo y un despiadado país de las maravillas",
                 "Haruki Murakami",
                 "https://www.planetadelibros.com.mx/usuaris/libros/fotos/231/m_libros/portada_el-fin-del-mundo-y-un-despiadado-pais-de-las-marav_haruki-murakami_201609131929.jpg",
@@ -269,7 +269,7 @@ object BookProvider {
                 140.00
             ),
             20 to Book(
-                20,
+                "20",
                 "El libro de los Baltimore",
                 "Joël Dicker",
                 "https://m.media-amazon.com/images/I/71Emo1cLdTL._AC_UF1000,1000_QL80_.jpg",
@@ -283,7 +283,7 @@ object BookProvider {
                 140.00
             ),
             21 to Book(
-                21,
+                "21",
                 "La chica del tren",
                 "Paula Hawkins",
                 "https://m.media-amazon.com/images/I/41KEMBmpWaL.jpg",
@@ -297,7 +297,7 @@ object BookProvider {
                 150.00
             ),
             22 to Book(
-                22,
+                "22",
                 "El Informe Pelícano",
                 "John Grisham",
                 "https://www.elsotano.com/imagenes_grandes/9789708/978970810250.JPG",
@@ -311,7 +311,7 @@ object BookProvider {
                 120.00
             ),
             23 to Book(
-                23,
+                "23",
                 "El nombre del viento",
                 "Patrick Rothfuss",
                 "https://m.media-amazon.com/images/I/71Koo4MN6wS._AC_UF1000,1000_QL80_.jpg",
@@ -325,7 +325,7 @@ object BookProvider {
                 160.00
             ),
             24 to Book(
-                24,
+                "24",
                 "La ladrona de libros",
                 "Markus Zusak",
                 "https://images.cdn3.buscalibre.com/fit-in/360x360/a5/b3/a5b3ad34ab8ac802b64605029de9c1f7.jpg",
@@ -339,7 +339,7 @@ object BookProvider {
                 130.00
             ),
             25 to Book(
-                25,
+                "25",
                 "Norwegian Wood",
                 "Haruki Murakami",
                 "https://m.media-amazon.com/images/I/81zqVhvbHbL._AC_UF894,1000_QL80_.jpg",
@@ -353,7 +353,7 @@ object BookProvider {
                 140.00
             ),
             26 to Book(
-                26,
+                "26",
                 "1Q84",
                 "Haruki Murakami",
                 "https://www.planetadelibros.com.mx/usuaris/libros/fotos/71/m_libros/1q84-libros-1-y-2_9788483836262.jpg",
@@ -367,7 +367,7 @@ object BookProvider {
                 200.00
             ),
             27 to Book(
-                27,
+                "27",
                 "Kafka en la orilla",
                 "Haruki Murakami",
                 "https://m.media-amazon.com/images/I/81AwOfVpR2L._AC_UF1000,1000_QL80_.jpg",
@@ -381,7 +381,7 @@ object BookProvider {
                 160.00
             ),
             28 to Book(
-                28,
+                "28",
                 "Tokio blues",
                 "Haruki Murakami",
                 "https://m.media-amazon.com/images/I/71YpNgq+1dL._AC_UF1000,1000_QL80_.jpg",
@@ -395,7 +395,7 @@ object BookProvider {
                 140.00
             ),
             29 to Book(
-                29,
+                "29",
                 "After Dark",
                 "Haruki Murakami",
                 "https://m.media-amazon.com/images/I/91mlPVcYHtL._AC_UF1000,1000_QL80_.jpg",
@@ -409,7 +409,7 @@ object BookProvider {
                 130.00
             ),
             30 to Book(
-                30,
+                "30",
                 "Memorias de una geisha",
                 "Arthur Golden",
                 "https://www.elsotano.com/imagenes_grandes/9786073/978607315606.JPG",
@@ -645,9 +645,9 @@ object BookProvider {
                 "Español",
                 18,
                 110.00
-            ),
+            ),*/
             47 to Book(
-                47,
+                "47",
                 "El zar saltan",
                 "Nikolái Gógol",
                 "https://www.editorialrenacimiento.com/5500-large_default/el-zar-saltan.jpg",

@@ -3,6 +3,9 @@
 
     <!-- Botón "Acerca de" -->
     <item
+        android:id="@+id/nav_add"
+        android:title="Agregar Libro" />
+    <item
         android:id="@+id/nav_about"
         android:title="Acerca de" />
 

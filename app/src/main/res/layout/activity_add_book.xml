@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agregar Libro"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Autor"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etCoverImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL de la Imagen de Portada"
+            android:inputType="textUri" />
+
+        <EditText
+            android:id="@+id/etYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Año"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etSinopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sinopsis"
+            android:inputType="textMultiLine" />
+
+        <EditText
+            android:id="@+id/etEditorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Editorial"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stock"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etPages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Número de Páginas"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Idioma"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etRecommendedAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Edad Recomendada"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnAddBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Agregar Libro"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+</ScrollView>
