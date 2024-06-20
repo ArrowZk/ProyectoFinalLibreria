@@ -32,7 +32,7 @@ class BookDetail : AppCompatActivity() {
         setContentView(R.layout.activity_book_details)
 
         // Obtener el ID del libro seleccionado del Intent
-        bookId = intent.getStringExtra("book_id") // Suponiendo que el ID es de tipo String
+        bookId = intent.getStringExtra("book_id") // Porque el ID es de tipo String
 
         //
         bookTitle = intent.getStringExtra("book_title")
