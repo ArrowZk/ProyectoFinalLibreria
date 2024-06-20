@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/pastel_lavender">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/rounded_background">
 
         <TextView
             android:layout_width="wrap_content"
@@ -15,91 +19,127 @@
             android:text="Agregar Libro"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_gravity="center"
-            android:paddingBottom="16dp"/>
+            android:paddingBottom="16dp" />
 
         <EditText
             android:id="@+id/etTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Título"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Autor"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etCoverImage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="URL de la Imagen de Portada"
-            android:inputType="textUri" />
+            android:inputType="textUri"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etYear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Año"
-            android:inputType="number" />
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etSinopsis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Sinopsis"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etEditorial"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Editorial"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etStock"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Stock"
-            android:inputType="number" />
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etPages"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Número de Páginas"
-            android:inputType="number" />
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etLanguage"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Idioma"
-            android:inputType="text" />
+            android:inputType="text"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etRecommendedAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Edad Recomendada"
-            android:inputType="number" />
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/etPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Precio"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
         <Button
             android:id="@+id/btnAddBook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Agregar Libro"
-            android:layout_marginTop="16dp"/>
+            android:textColor="@color/white"
+            android:backgroundTint="@color/pastel_blue"
+            android:layout_marginTop="16dp" />
     </LinearLayout>
 </ScrollView>

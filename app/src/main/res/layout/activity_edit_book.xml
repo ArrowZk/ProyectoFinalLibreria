@@ -1,79 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/pastel_yellow">
 
-    <EditText
-        android:id="@+id/etBookTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título del Libro" />
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/rounded_background">
 
-    <EditText
-        android:id="@+id/etBookAuthor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Autor" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Editar Libro"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:paddingBottom="16dp" />
 
-    <EditText
-        android:id="@+id/etBookYear"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Año" />
+        <EditText
+            android:id="@+id/etBookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Título del Libro"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookCover"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="URL de la Portada"/>
+        <EditText
+            android:id="@+id/etBookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Autor"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookSinopsis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Sinopsis" />
+        <EditText
+            android:id="@+id/etBookYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Año"
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookEditorial"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Editorial" />
+        <EditText
+            android:id="@+id/etBookCover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL de la Portada"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookStock"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Stock" />
+        <EditText
+            android:id="@+id/etBookSinopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Sinopsis"
+            android:inputType="textMultiLine"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookPages"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Páginas" />
+        <EditText
+            android:id="@+id/etBookEditorial"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Editorial"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookLanguage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Idioma" />
+        <EditText
+            android:id="@+id/etBookStock"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Stock"
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookRecomendedAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Edad Recomendada" />
+        <EditText
+            android:id="@+id/etBookPages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Páginas"
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <EditText
-        android:id="@+id/etBookPrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Precio" />
+        <EditText
+            android:id="@+id/etBookLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Idioma"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
 
-    <Button
-        android:id="@+id/btnSave"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Guardar" />
-</LinearLayout>
+        <EditText
+            android:id="@+id/etBookRecomendedAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Edad Recomendada"
+            android:inputType="number"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <EditText
+            android:id="@+id/etBookPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Precio"
+            android:inputType="numberDecimal"
+            android:background="@drawable/rounded_background"
+            android:padding="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/pastel_purpple"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

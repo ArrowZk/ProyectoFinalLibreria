@@ -20,7 +20,8 @@
         android:backgroundTint="@color/pastel_pink"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:text="Aplicacion hecha para examen segundo parcial de la materia de DISEÑO PARA MOVILES, El objetivo principal del desarrollo de esta aplicación es crear una plataforma intuitiva y atractiva para que los usuarios exploren y descubran una amplia variedad de libros."/>
+        android:text="Aplicacion hecha para proyecto final de la materia de DISEÑO PARA MOVILES, El objetivo principal del desarrollo de esta aplicación es crear una plataforma intuitiva y atractiva para que los usuarios exploren y descubran una amplia variedad de libros."/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -34,4 +35,30 @@
         android:textSize="22dp"
         android:textStyle="bold"
         android:text="Roberto de Jesus Macias Tovar"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:text="Edgar Mauricio Rodriguez Rosas"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22dp"
+        android:textStyle="bold"
+        android:text="Carlos Manuel Solis Hernandez"/>
+
+    <FrameLayout
+        android:id="@+id/map_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/pastel_blue_gray"/>
+
 </LinearLayout>
