@@ -5,8 +5,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.libreriap2.utils.ValidationUtils
 import com.google.firebase.database.FirebaseDatabase
-
 class AddBookActivity : AppCompatActivity() {
 
     private lateinit var etTitle: EditText
@@ -61,20 +61,25 @@ class AddBookActivity : AppCompatActivity() {
             Toast.makeText(this, "Título y Autor son obligatorios", Toast.LENGTH_SHORT).show()
             return
         }
+        if(ValidationUtils.validateBookFields(
+            etTitle, etAuthor, etYear, etSinopsis, etEditorial, etStock, etPages, etLanguage, etRecommendedAge, etPrice
+        )){
+            val database = FirebaseDatabase.getInstance().reference.child("books")
+            val bookId = database.push().key
+            val book = Book(bookId ?: "", title, author, coverImage, year, sinopsis, editorial, stock, pages, language, recommendedAge, price)
 
-        val database = FirebaseDatabase.getInstance().reference.child("books")
-        val bookId = database.push().key
-        val book = Book(bookId ?: "", title, author, coverImage, year, sinopsis, editorial, stock, pages, language, recommendedAge, price)
-
-        if (bookId != null) {
-            database.child(bookId).setValue(book).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this, "Libro agregado con éxito", Toast.LENGTH_SHORT).show()
-                    finish()
-                } else {
-                    Toast.makeText(this, "Error al agregar el libro", Toast.LENGTH_SHORT).show()
+            if (bookId != null) {
+                database.child(bookId).setValue(book).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Libro agregado con éxito", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        Toast.makeText(this, "Error al agregar el libro", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+        }else{
+
         }
     }
 }

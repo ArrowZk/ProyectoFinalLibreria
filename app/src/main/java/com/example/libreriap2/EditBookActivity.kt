@@ -1,5 +1,7 @@
 package com.example.libreriap2
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
@@ -7,7 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
-
+import com.example.libreriap2.utils.ValidationUtils
 class EditBookActivity : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private lateinit var bookId: String
@@ -90,30 +92,40 @@ class EditBookActivity : AppCompatActivity() {
     }
 
     private fun saveBookDetails() {
-        val updatedBook = Book(
-            id = bookId,
-            title = etBookTitle.text.toString(),
-            author = etBookAuthor.text.toString(),
-            coverImage = etBookCover.text.toString(),
-            year = etBookYear.text.toString(),
-            sinopsis = etBookSinopsis.text.toString(),
-            editorial = etBookEditorial.text.toString(),
-            stock = etBookStock.text.toString().toInt(),
-            pages = etBookPages.text.toString().toInt(),
-            language = etBookLanguage.text.toString(),
-            recomendedAge = etBookRecomendedAge.text.toString().toInt(),
-            price = etBookPrice.text.toString().toDouble()
-        )
+        if(ValidationUtils.validateBookFields(
+                etBookTitle, etBookAuthor, etBookYear, etBookSinopsis, etBookEditorial, etBookStock, etBookPages, etBookLanguage, etBookRecomendedAge, etBookPrice
+            )){
+            val updatedBook = Book(
+                id = bookId,
+                title = etBookTitle.text.toString(),
+                author = etBookAuthor.text.toString(),
+                coverImage = etBookCover.text.toString(),
+                year = etBookYear.text.toString(),
+                sinopsis = etBookSinopsis.text.toString(),
+                editorial = etBookEditorial.text.toString(),
+                stock = etBookStock.text.toString().toInt(),
+                pages = etBookPages.text.toString().toInt(),
+                language = etBookLanguage.text.toString(),
+                recomendedAge = etBookRecomendedAge.text.toString().toInt(),
+                price = etBookPrice.text.toString().toDouble()
+            )
 
-        database.setValue(updatedBook).addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                Toast.makeText(applicationContext, "Libro actualizado correctamente", Toast.LENGTH_SHORT).show()
-                finish() // Volver a la actividad anterior
-            } else {
-                Toast.makeText(applicationContext, "Error al actualizar", Toast.LENGTH_SHORT).show()
-                // Manejar error
+            database.setValue(updatedBook).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(applicationContext, "Libro actualizado correctamente", Toast.LENGTH_SHORT).show()
+                    val resultIntent = Intent()
+                    resultIntent.putExtra("book_id", bookId)
+                    setResult(Activity.RESULT_OK, resultIntent)
+                    finish() // Volver a la actividad anterior
+                } else {
+                    Toast.makeText(applicationContext, "Error al actualizar", Toast.LENGTH_SHORT).show()
+                    // Manejar error
+                }
             }
+        }else{
+
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

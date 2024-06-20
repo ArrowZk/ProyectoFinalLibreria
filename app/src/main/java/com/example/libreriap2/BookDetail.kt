@@ -1,5 +1,6 @@
 package com.example.libreriap2
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -7,6 +8,7 @@ import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.libreriap2.utils.BookDatabaseHelper
@@ -19,6 +21,11 @@ import com.google.firebase.database.ValueEventListener
 class BookDetail : AppCompatActivity() {
     private lateinit var database: DatabaseReference
     private var bookId: String? = null
+    private var bookTitle: String? = null
+
+    companion object {
+        const val EDIT_BOOK_REQUEST_CODE = 1
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +33,9 @@ class BookDetail : AppCompatActivity() {
 
         // Obtener el ID del libro seleccionado del Intent
         bookId = intent.getStringExtra("book_id") // Suponiendo que el ID es de tipo String
+
+        //
+        bookTitle = intent.getStringExtra("book_title")
 
         // Inicializar la referencia a la base de datos
         database = FirebaseDatabase.getInstance().reference.child("books").child(bookId!!)
@@ -57,30 +67,42 @@ class BookDetail : AppCompatActivity() {
                 // Lógica para abrir una nueva Activity
                 val intent = Intent(this, EditBookActivity::class.java)
                 intent.putExtra("book_id", bookId)
-                startActivity(intent)
+                startActivityForResult(intent, EDIT_BOOK_REQUEST_CODE)
                 true
             }
             R.id.action_call_function -> {
-                bookId?.let { id ->
-                    BookDatabaseHelper.deleteBook(
-                        this,
-                        id,
-                        onSuccess = {
-                            Toast.makeText(this, "Eliminacion exitosa", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                            startActivity(intent)
-                            finish()
-                        },
-                        onFailure = { e ->
-                            Toast.makeText(this, "Fallo en la eliminacion", Toast.LENGTH_SHORT).show()
-                            e.printStackTrace()
-                        }
-                    )
-                }
+                showDeleteConfirmationDialog()
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showDeleteConfirmationDialog() {
+        AlertDialog.Builder(this)
+            .setTitle("Confirmación de Eliminación")
+            .setMessage("¿Está seguro que quiere eliminar $bookTitle?")
+            .setPositiveButton("Eliminar") { _, _ ->
+                deleteBook()
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
+    }
+
+    private fun deleteBook() {
+        bookId?.let {
+            BookDatabaseHelper.deleteBook(this, it,
+                onSuccess = {
+                    Toast.makeText(this, "Libro eliminado exitosamente", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                    startActivity(intent)
+                    finish()
+                },
+                onFailure = { e ->
+                    Toast.makeText(this, "Error al eliminar el libro: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            )
         }
     }
 
@@ -111,4 +133,12 @@ class BookDetail : AppCompatActivity() {
             }
         })
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == EDIT_BOOK_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            loadBookDetails()
+        }
+    }
+
 }

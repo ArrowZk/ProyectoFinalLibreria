@@ -10,13 +10,12 @@ object BookDatabaseHelper {
     private const val TAG = "BookDatabaseHelper"
     private lateinit var dr: DatabaseReference
     fun deleteBook(context: Context, bookId: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
-        Toast.makeText(context, "Funcion de eliminacion", Toast.LENGTH_SHORT).show()
         Log.d(TAG, "Attempting to delete book with ID: $bookId")
 
         dr = FirebaseDatabase.getInstance().getReference("books")
         dr.child(bookId).removeValue()
             .addOnSuccessListener {
-                Toast.makeText(context, "Eliminacion exitosa", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Libro eliminado correctamente", Toast.LENGTH_SHORT).show()
                 Log.d(TAG, "Book deleted successfully.")
             }.addOnFailureListener{
                 Toast.makeText(context, "Eliminacion fallida", Toast.LENGTH_SHORT).show()

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.example.libreriap2.Book
 import com.example.libreriap2.BookDetail
@@ -22,7 +21,8 @@ class BookAdapter(private val books: List<Book>) : RecyclerView.Adapter<BookView
 
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, BookDetail::class.java)
-            intent.putExtra("book_id", book.id) // Si la clase Book tiene un campo id
+            intent.putExtra("book_id", book.id)
+            intent.putExtra("book_title", book.title) // Si la clase Book tiene un campo id
             it.context.startActivity(intent)
             // Verificar si el libro es para mayores de 18 años
             if (book.isForAdults()) {
